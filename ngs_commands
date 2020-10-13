@@ -1,0 +1,2 @@
+# Calculate average insert size from bam file
+bamtools stats -in K562-H3K4me3-Ifna.bam -insert
