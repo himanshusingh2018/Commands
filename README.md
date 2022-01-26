@@ -15,8 +15,8 @@ a <- getBM(attributes=c(
   
   
   
-  #ARACNe
-  rm(list = ls())
+#ARACNe
+rm(list = ls())
 
 rda_files <- list.files(pattern = "net.interactome.rda", recursive = TRUE)
 tissue_names <- gsub('/net.interactome.rda','',rda_files)
@@ -34,5 +34,5 @@ save(AdiposeSub,AdiposeVis,Adrenal,ArteryAor,ArteryCor,ArteryTib,BrainCau,BrainC
      tcga_hnsc,tcga_kirp,tcga_laml,tcga_lgg,tcga_lihc,tcga_luad,tcga_lusc,tcga_ov,
      tcga_paad,tcga_pcpg,tcga_prad,tcga_read,tcga_sarc,tcga_skcm,tcga_stad,tcga_tgct,
      tcga_thca,tcga_thym,tcga_ucec,Testis,Thyroid,WholeBlood,
-     file = 'tpm_count_Xena.All_61_ARACNE.rda')
+     file = 'tpm_count_xena.All_61_ARACNE.rda')
 
