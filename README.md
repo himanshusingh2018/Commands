@@ -13,7 +13,18 @@ a <- getBM(attributes=c(
   filters="snp_filter", values=rsids,
   mart=ensembl, uniqueRows=TRUE) 
   
-  
+###############################################################
+# count number of files in subdirectories
+
+findfiles() {
+    echo "$1" $(find "$1" -maxdepth 1 -type f | wc -l)
+}
+
+export -f findfiles
+
+find ./ -type d -exec bash -c 'findfiles "$0"' {} \;
+
+###############################################################
   
 #ARACNe
 rm(list = ls())
