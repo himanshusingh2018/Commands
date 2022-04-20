@@ -47,3 +47,4 @@ save(AdiposeSub,AdiposeVis,Adrenal,ArteryAor,ArteryCor,ArteryTib,BrainCau,BrainC
      tcga_thca,tcga_thym,tcga_ucec,Testis,Thyroid,WholeBlood,
      file = 'tpm_count_xena.All_61_ARACNE.rda')
 
+[print(pcp.get_compounds(c)[0].cid, pcp.get_compounds(c)[0].isomeric_smiles, pcp.get_compounds(c)[0].xlogp, pcp.get_compounds(c)[0].h_bond_acceptor_count, pcp.get_compounds(c)[0].h_bond_donor_count, pcp.get_compounds(c)[0].exact_mass) for c in cids]
