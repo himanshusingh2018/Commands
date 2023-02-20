@@ -1,0 +1,2 @@
+If you are not able to install packages in conda environment due to the conflicts, add multiple channels
+conda install -c conda-forge -c bioconda picard=2.27
