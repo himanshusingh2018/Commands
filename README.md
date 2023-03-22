@@ -1,3 +1,8 @@
+#Extract chr21 sequence from hg19.fa
+sed -n '/>chr21/,/>chr22/p' hg19.fa >chr21.hg19.fa
+#extract chr21 gtf from hg19.refGene.gtf
+grep '^chr21\b' hg19.refGene.gtf > chr21.refGene.gtf
+
 # Commands
 BiocManager::install("biomaRt")
 require(biomaRt)
