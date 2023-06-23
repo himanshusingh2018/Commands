@@ -1,0 +1,2 @@
+#awk command to extract samples
+ls /Volumes/zive/Project_12502_*/*/*/19_*.gz /Volumes/zive/Project_12502_*/*/*/P-0032952*.gz | awk -F '/' '{print $NF}' | sed s/.fastq.gz// | sed 's/_R.*//' | uniq
