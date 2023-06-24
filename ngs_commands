@@ -1,2 +1,12 @@
 # Calculate average insert size from bam file
 bamtools stats -in K562-H3K4me3-Ifna.bam -insert
+
+#htseq-count
+htseq-count -i gene_id \
+--additional-attr gene_name \
+--type exon \
+--mode union \
+--format bam \
+bam/EZ-146-pre_merge_PE_Aligned.sortedByCoord.out.bam \
+/home/singhh5/gencode_hg38/gencode.v43.primary_assembly.annotation.gtf \
+>bam/EZ-146-pre_merge.exon.union.txt
