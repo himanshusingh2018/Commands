@@ -19,4 +19,4 @@ prepare_receptor4.py -r prot/5ih4.clean.pdb -v -o prot/5ih4.pdbqt -A ['bonds_hyd
 #go to conda base, vina is not working in autodock venv/ due to CPU error.
 conda activate base
 ./autodock_vina_1_1_2/bin/vina --center_x -3.927 --center_y 59.799 --center_z -49.503 --size_x 30 --size_y 30 --size_z 30 --receptor prot/1jwh.pdbqt --ligand ligand/CID_107971.pdbqt --out dock_res/1jwh_107971.pdbqt --log dock_res/1jwh_107971.log
-
+../autodock_vina_1_1_2/bin/vina --cpu 12 --seed 12 --center_x -3.794 --center_y -4.752 --center_z 29.938 --size_x 30 --size_y 30 --size_z 30 --receptor dna/region5.pdb --ligand lig/637568.pdbqt --out dock_res/region5_637568.pdbqt --log dock_res/region5_637568.log
