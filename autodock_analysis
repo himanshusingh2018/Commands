@@ -1,0 +1,22 @@
+#Activate autodock/venv/ environment
+conda create -p /Users/singhh5/Pictures/software/autodock/venv
+conda activate /Users/singhh5/Pictures/software/autodock/venv/
+
+#Install Software
+conda install python=2.7
+conda install openbabel
+conda install conda-forge::pymol-open-source
+Conda install insilichem::autodocktools-prepare
+conda install fpocket
+
+#run
+fpocket -f prot.pdb #extract binding pocket
+
+obabel ligand/Conformer3D_COMPOUND_CID_107971.sdf --gen3D -O ligand/CID_107971.pdb #sdf to pdb
+prepare_ligand4.py -v -A ['bonds_hydrogens','bonds','hydrogens'] -l CID_5281807.pdb -o CID_5281807.pdbqt #prepare ligand output to pdbqt
+prepare_receptor4.py -r prot/5ih4.clean.pdb -v -o prot/5ih4.pdbqt -A ['bonds_hydrogens','bonds','hydrogens'] -e 'True' #prepare receptor output to pdbqt
+
+#go to conda base, vina is not working in autodock venv/ due to CPU error.
+conda activate base
+./autodock_vina_1_1_2/bin/vina --center_x -3.927 --center_y 59.799 --center_z -49.503 --size_x 30 --size_y 30 --size_z 30 --receptor prot/1jwh.pdbqt --ligand ligand/CID_107971.pdbqt --out dock_res/1jwh_107971.pdbqt --log dock_res/1jwh_107971.log
+
